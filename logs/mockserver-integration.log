@@ -1,0 +1,100 @@
+I, [2017-05-19T15:29:08.166999 #7271]  INFO -- : Registered expected interaction GET /post/list
+D, [2017-05-19T15:29:08.167282 #7271] DEBUG -- : {
+  "description": "a request for all posts",
+  "providerState": "Has two posts",
+  "request": {
+    "method": "GET",
+    "path": "/post/list",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "posts": [
+        {
+          "id": 1,
+          "date": "01/10/2016",
+          "contents": "Bla bla bla"
+        },
+        {
+          "id": 2,
+          "date": "01/09/2016",
+          "contents": "Microservice microservice"
+        }
+      ]
+    }
+  }
+}
+I, [2017-05-19T15:29:08.173537 #7271]  INFO -- : Registered expected interaction GET /post/1
+D, [2017-05-19T15:29:08.173666 #7271] DEBUG -- : {
+  "description": "a request for one post",
+  "providerState": "Has one post",
+  "request": {
+    "method": "GET",
+    "path": "/post/1",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "post": {
+        "id": 1,
+        "date": "01/08/2016",
+        "contents": "Bla"
+      }
+    }
+  }
+}
+I, [2017-05-19T15:29:08.183358 #7271]  INFO -- : Received request GET /post/lists
+D, [2017-05-19T15:29:08.183488 #7271] DEBUG -- : {
+  "path": "/post/lists",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json",
+    "Host": "localhost:1234",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+E, [2017-05-19T15:29:08.183634 #7271] ERROR -- : No matching interaction found for GET /post/lists
+E, [2017-05-19T15:29:08.183662 #7271] ERROR -- : Interaction diffs for that route:
+E, [2017-05-19T15:29:08.183686 #7271] ERROR -- : 
+I, [2017-05-19T15:29:08.191681 #7271]  INFO -- : Received request GET /post/1
+D, [2017-05-19T15:29:08.191778 #7271] DEBUG -- : {
+  "path": "/post/1",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json",
+    "Host": "localhost:1234",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2017-05-19T15:29:08.192000 #7271]  INFO -- : Found matching response for GET /post/1
+D, [2017-05-19T15:29:08.192087 #7271] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "post": {
+      "id": 1,
+      "date": "01/08/2016",
+      "contents": "Bla"
+    }
+  }
+}
+I, [2017-05-19T15:29:08.199648 #7271]  INFO -- : Writing pact with details {:consumer=>{:name=>"My Consumer"}, :provider=>{:name=>"Posts Provider"}}
+I, [2017-05-19T15:29:08.199842 #7271]  INFO -- : Writing pact for Posts Provider to /Users/admin/Desktop/pact-node-example-master/pacts/my_consumer-posts_provider.json

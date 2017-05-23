@@ -1,0 +1,70 @@
+{
+  "consumer": {
+    "name": "Guest UI"
+  },
+  "provider": {
+    "name": "Guests Provider"
+  },
+  "interactions": [
+    {
+      "description": "a request for all guests",
+      "providerState": "Has two Guests",
+      "request": {
+        "method": "GET",
+        "path": "/guests/list",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "guests": [
+            {
+              "id": 1,
+              "name": "Guest 1",
+              "age": "20"
+            },
+            {
+              "id": 2,
+              "name": "Guest 2",
+              "contents": "25"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "description": "a request for one post",
+      "providerState": "Has one guest",
+      "request": {
+        "method": "GET",
+        "path": "/guest/1",
+        "headers": {
+          "Accept": "application/json"
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "guest": {
+            "id": 1,
+            "name": "Guest 1",
+            "age": "20"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
